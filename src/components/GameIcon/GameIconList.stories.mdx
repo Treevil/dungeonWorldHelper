@@ -1,0 +1,39 @@
+import {Meta} from '@storybook/addon-docs';
+import {dataIcons} from "./dataIcon";
+import GameIcon from "./GameIcon"
+
+<Meta title="Icons/List"/>
+
+# Icon List
+
+<div style={{
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+}}>
+    {
+        Object
+            .keys(dataIcons)
+            .sort()
+            .map(
+                (el) => (
+                    <div
+                        key={el}
+                        style={{
+                            outline: "1px solid",
+                            padding: "1rem",
+                            margin: '1rem',
+                            width: 'calc(25% - 4rem)',
+                            textAlign: 'center',
+                            wordWrap: 'break-word',
+                        }}
+                    >
+                        <GameIcon
+                            fill={'#000'}
+                            icon={el}
+                        /> <br/>
+                        {el}
+                    </div>
+                ))
+    }
+</div>
